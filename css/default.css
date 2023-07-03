@@ -1,31 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;800&display=swap');
+
+@font-face {
+  font-family: 'ElzevierCaps';
+  src: url('../fonts/ElzevierCaps.ttf') format('truetype');
+}
+
 body {
     color: black;
-    font-size: 16px;
+    font-size: 1.3125rem;
     margin: 0px auto 0px auto;
     width: 600px;
+    font-family: 'EB Garamond', serif;
+    background-color: #fffffa;
 }
 
 div#header {
-    border-bottom: 2px solid black;
     margin-bottom: 30px;
     padding: 12px 0px 12px 0px;
 }
 
-div#logo a {
-    color: black;
-    float: left;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-}
-
 div#header #navigation {
     text-align: right;
+    position: fixed;
+    top: 0px;
+    right: 2px;
+    padding-right: 10px;
 }
 
 div#header #navigation a {
-    color: black;
-    font-size: 18px;
+    color: gray;
+    font-size: 10px;
     font-weight: bold;
     margin-left: 12px;
     text-decoration: none;
@@ -42,11 +48,22 @@ div#footer {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0px;
+    font-variant: small-caps;
+    line-height: 1.1;
+    max-width: 100%;
+    font-weight: 600;
+    margin: 0px auto 55px auto;
 }
 
-h2 {
-    font-size: 20px;
+#heading{
+    font-size: 1.5em;
+    color: #aaa;
+    text-align: center;
+    font-weight: 400;
+    margin: 80px auto 5px auto;
 }
 
 div.info {
@@ -54,3 +71,18 @@ div.info {
     font-size: 14px;
     font-style: italic;
 }
+
+#first-paragraph {
+  display: block;
+}
+
+#first-paragraph::first-letter {
+  font-family: "ElzevierCaps";
+  font-size: 6.625em;
+  margin: -.1em .03em -.25em 0;
+  float: left;
+  line-height: 1.1;
+}
+
+
+

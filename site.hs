@@ -63,6 +63,11 @@ main = hakyll $ do
 
     match "templates/*" $ compile templateCompiler
 
+    match "fonts/*" $ do
+        route idRoute
+        compile copyFileCompiler
+
+
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
