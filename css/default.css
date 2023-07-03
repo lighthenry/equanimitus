@@ -16,6 +16,13 @@ body {
     background-color: #fffffa;
 }
 
+p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
+
 div#header {
     margin-bottom: 30px;
     padding: 12px 0px 12px 0px;
@@ -63,13 +70,14 @@ h1 {
     color: #aaa;
     text-align: center;
     font-weight: 400;
-    margin: 80px auto 5px auto;
+    margin: 80px auto 3px auto;
 }
 
 div.info {
-    color: #555;
-    font-size: 14px;
-    font-style: italic;
+    color: #aaa;
+    font-size: 11px;
+    text-align: center;
+    padding-bottom: 21px;
 }
 
 #first-paragraph {
@@ -84,5 +92,14 @@ div.info {
   line-height: 1.1;
 }
 
+@media all and (min-width: 650px) {
+    .post-content p.drop-cap-jerusalem::first-letter {
+        font-family: "ElzevierCaps";
+        font-size: 7.2em;
+        margin: -.1em .03em -.1em 0;
+        float: left;
+        line-height: 1.1;
+    }
+}
 
 
