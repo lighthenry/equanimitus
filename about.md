@@ -2,7 +2,6 @@
 title: About
 ---
 
-==============
 Why this site?
 ==============
 
