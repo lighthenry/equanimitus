@@ -13,7 +13,7 @@ body {
     margin: 0px auto 0px auto;
     width: 600px;
     font-family: 'EB Garamond', serif;
-    background-color: #fffffa;
+    background-color: whitesmoke;
 }
 
 p {
@@ -125,9 +125,10 @@ h3 {
     .post-content p.drop-cap-jerusalem::first-letter {
         font-family: "ElzevierCaps";
         font-size: 7.2em;
-        margin: -.1em .03em -.1em 0;
+        margin: 0em .03em -.1em 0;
         float: left;
-        line-height: 1.1;
+        line-height: 0.9;
+    
     }
 }
 
@@ -137,6 +138,53 @@ h3 {
     margin: -.1em .03em -.1em 0;
     float: left;
     line-height: 1.1;
+}
+
+.hover-preview {
+    position: relative;
+    border-bottom: 1px dotted #666;
+    color: inherit;
+    text-decoration: none;
+    cursor: help;
+}
+
+.hover-preview::after {
+    content: attr(data-preview);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.5rem);
+    z-index: 20;
+    display: block;
+    min-width: 16rem;
+    max-width: 28rem;
+    padding: 0.8rem 1rem;
+    margin-top: 0.2rem;
+    background: #f9f7ef;
+    border: 1px solid #ccc;
+    color: #111;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateY(-0.25rem);
+    white-space: normal;
+    text-align: left;
+}
+
+.hover-preview:hover::after,
+.hover-preview:focus::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+    .hover-preview::after {
+        left: 0;
+        right: auto;
+        max-width: 90vw;
+    }
 }
 
 
