@@ -140,51 +140,45 @@ h3 {
     line-height: 1.1;
 }
 
-.hover-preview {
-    position: relative;
-    border-bottom: 1px dotted #666;
+
+/* Definitions use the site's restrained serif typography. */
+.glossary, .hover-preview {
+    border-bottom: 1px dotted #777;
     color: inherit;
     text-decoration: none;
-    cursor: help;
 }
-
-.hover-preview::after {
-    content: attr(data-preview);
-    position: absolute;
-    left: 0;
-    top: calc(100% + 0.5rem);
-    z-index: 20;
-    display: block;
-    min-width: 16rem;
-    max-width: 28rem;
-    padding: 0.8rem 1rem;
-    margin-top: 0.2rem;
-    background: #f9f7ef;
-    border: 1px solid #ccc;
-    color: #111;
-    font-size: 0.95rem;
+.glossary-trigger { cursor: help; }
+.glossary-trigger:focus-visible {
+    outline: 2px solid #70634b;
+    outline-offset: 3px;
+}
+.glossary-trigger[aria-expanded="true"] { border-bottom-style: solid; }
+.glossary-popup {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    width: 22rem;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+    overflow: auto;
+    padding: 1rem 1.2rem;
+    border: 1px solid #bcb8ac;
+    border-top: 3px solid #70634b;
+    background: #faf8f1;
+    color: #25231f;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.1rem;
     line-height: 1.5;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    transform: translateY(-0.25rem);
-    white-space: normal;
     text-align: left;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    box-shadow: 0 6px 24px rgb(0 0 0 / 14%);
 }
-
-.hover-preview:hover::after,
-.hover-preview:focus::after {
-    opacity: 1;
-    transform: translateY(0);
+.glossary-popup[hidden] { display: none; }
+@media (max-width: 640px) {
+    body { width: auto; margin-left: 20px; margin-right: 20px; }
 }
-
-@media (max-width: 700px) {
-    .hover-preview::after {
-        left: 0;
-        right: auto;
-        max-width: 90vw;
-    }
+@media print {
+    .glossary-popup { display: none; }
+    .glossary, .hover-preview { border: 0; }
 }
-
-
