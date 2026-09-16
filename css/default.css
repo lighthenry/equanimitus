@@ -124,6 +124,7 @@ h3 {
 @media all and (min-width: 650px) {
     .post-content p.drop-cap-jerusalem::first-letter {
         font-family: "ElzevierCaps";
+        font-style: normal;
         font-size: 7.2em;
         margin: 0em .03em -.1em 0;
         float: left;
