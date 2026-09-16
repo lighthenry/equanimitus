@@ -48,7 +48,13 @@ document.addEventListener('DOMContentLoaded', function () {
         clearTimeout(timer);
         if (active !== term) close();
         active = term;
-        popup.textContent = term.dataset.definition || term.dataset.preview || term.getAttribute('definition');
+        const title = document.createElement('strong');
+        title.className = 'glossary-popup-title';
+        title.textContent = term.textContent.replace(/\s+/g, ' ').trim();
+        const description = document.createElement('div');
+        description.className = 'glossary-popup-description';
+        description.textContent = term.dataset.definition || term.dataset.preview || term.getAttribute('definition');
+        popup.replaceChildren(title, description);
         popup.hidden = false;
         term.setAttribute('aria-expanded', 'true');
         term.setAttribute('aria-describedby', popup.id);
